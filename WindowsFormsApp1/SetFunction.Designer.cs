@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.TryCalcButtion = new System.Windows.Forms.Button();
             this.Analyzerbutton = new System.Windows.Forms.Button();
             this.PolNotBox = new System.Windows.Forms.TextBox();
             this.FAfterBox = new System.Windows.Forms.TextBox();
             this.FBox = new System.Windows.Forms.TextBox();
             this.Consolebox = new System.Windows.Forms.TextBox();
+            this.TestXBox = new System.Windows.Forms.TextBox();
+            this.ReturnButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.MainPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Consolebox, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -55,18 +57,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(665, 520);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // MainPanel
             // 
-            this.panel1.Controls.Add(this.TryCalcButtion);
-            this.panel1.Controls.Add(this.Analyzerbutton);
-            this.panel1.Controls.Add(this.PolNotBox);
-            this.panel1.Controls.Add(this.FAfterBox);
-            this.panel1.Controls.Add(this.FBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(659, 351);
-            this.panel1.TabIndex = 0;
+            this.MainPanel.Controls.Add(this.ReturnButton);
+            this.MainPanel.Controls.Add(this.TryCalcButtion);
+            this.MainPanel.Controls.Add(this.Analyzerbutton);
+            this.MainPanel.Controls.Add(this.TestXBox);
+            this.MainPanel.Controls.Add(this.PolNotBox);
+            this.MainPanel.Controls.Add(this.FAfterBox);
+            this.MainPanel.Controls.Add(this.FBox);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(3, 3);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(659, 351);
+            this.MainPanel.TabIndex = 0;
             // 
             // TryCalcButtion
             // 
@@ -76,6 +80,7 @@
             this.TryCalcButtion.TabIndex = 2;
             this.TryCalcButtion.Text = "Try calculate";
             this.TryCalcButtion.UseVisualStyleBackColor = true;
+            this.TryCalcButtion.Click += new System.EventHandler(this.TryCalcButtion_Click);
             // 
             // Analyzerbutton
             // 
@@ -120,7 +125,7 @@
             // Consolebox
             // 
             this.Consolebox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Consolebox.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Consolebox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Consolebox.Location = new System.Drawing.Point(3, 360);
             this.Consolebox.Multiline = true;
             this.Consolebox.Name = "Consolebox";
@@ -128,6 +133,27 @@
             this.Consolebox.Size = new System.Drawing.Size(659, 157);
             this.Consolebox.TabIndex = 1;
             this.Consolebox.Text = "Console";
+            // 
+            // TestXBox
+            // 
+            this.TestXBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TestXBox.Location = new System.Drawing.Point(3, 327);
+            this.TestXBox.Name = "TestXBox";
+            this.TestXBox.Size = new System.Drawing.Size(653, 21);
+            this.TestXBox.TabIndex = 0;
+            this.TestXBox.Text = "Test x value";
+            // 
+            // ReturnButton
+            // 
+            this.ReturnButton.Enabled = false;
+            this.ReturnButton.Location = new System.Drawing.Point(186, 84);
+            this.ReturnButton.Name = "ReturnButton";
+            this.ReturnButton.Size = new System.Drawing.Size(75, 23);
+            this.ReturnButton.TabIndex = 3;
+            this.ReturnButton.Text = "Return";
+            this.ReturnButton.UseVisualStyleBackColor = true;
+            this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
             // 
             // SetFunction
             // 
@@ -139,8 +165,8 @@
             this.Text = "SetFunction";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,12 +174,14 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button Analyzerbutton;
         private System.Windows.Forms.TextBox PolNotBox;
         private System.Windows.Forms.TextBox FAfterBox;
         private System.Windows.Forms.TextBox FBox;
         private System.Windows.Forms.Button TryCalcButtion;
         private System.Windows.Forms.TextBox Consolebox;
+        private System.Windows.Forms.TextBox TestXBox;
+        private System.Windows.Forms.Button ReturnButton;
     }
 }
